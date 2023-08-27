@@ -13,7 +13,6 @@ import { useLogStore } from "@/store";
 import { cn } from "@/lib/utils";
 
 export default function Logs() {
-	// list from supabase
 	const logs = useLogStore((state) => state.logs);
 
 	return (
@@ -30,7 +29,6 @@ export default function Logs() {
 				<TableBody>
 					{Object.keys(logs).map((key) => {
 						const log = logs[key];
-
 						return (
 							<TableRow
 								key={key}
