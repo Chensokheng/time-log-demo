@@ -7,7 +7,10 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import InitLog from "@/components/state/InitLog";
-import { ILog } from "@/store";
+import { IResultLog } from "@/store";
+
+export const dynamic = "force-dynamic";
+
 export default async function page() {
 	const supabase = createServerComponentClient({ cookies });
 
@@ -24,7 +27,7 @@ export default async function page() {
 
 	return (
 		<div className="p-5 space-y-10">
-			<InitLog logs={logs as ILog[]} />
+			<InitLog logs={logs as IResultLog[]} />
 			<Navbar />
 			<NewLog />
 			<Calendar />
